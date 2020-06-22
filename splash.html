@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 | 알지</title>
+    <title>스플래시 | 알지</title>
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
     <script src="https://kit.fontawesome.com/5395c296b4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript">
+    //페이지 이동 (스플래시-로그인)
+    var pageLink = 'login.html';
+    var movePage = setTimeout(function() {
+        location.replace(pageLink);
+    },3000);
+    </script>
 </head>
 <body>
     <!-- 전체레이아웃 -->
@@ -41,14 +48,14 @@
 
         <!-- 컨테이너 -->
         <div id="container">
-            <!-- 로그인 페이지 -->
+            <!-- 스플래시 페이지 -->
             <div id="splash-page">
                 <div class="splash-div">
                     <p class="splash-slogan">전국 <strong>지각쟁이</strong>들의 <strong>필수앱</strong></p>
                     <h1 class="splash-logo"><img src="./img/splash-logo.png" alt="알지 로고" /></h1>
                 </div>
             </div>
-            <!-- //로그인 페이지 -->
+            <!-- //스플래시 페이지 -->
         </div>
         <!-- //컨테이너 -->
     </div>

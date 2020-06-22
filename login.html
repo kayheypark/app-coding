@@ -58,18 +58,18 @@
                             <div class="user-id-div">
                                 <label class="user-id-label1" for="user-id">계정</label>
                                 <label class="user-id-label2" for="user-id"><img src="./img/login-id.png" alt="사용자 계정" /></label>
-                                <input class="user-id" id="user-id" type="email" />
+                                <input class="user-id" id="user-id" type="email" placeholder="kayheypark@kakao.com" />
                             </div>
                             <div class="user-pw-div">
                                 <label class="user-pw-label1" for="user-pw">비밀번호</label>
                                 <label class="user-pw-label2" for="user-pw"><img src="./img/login-pw.png" alt="사용자 비밀번호" /></label>
-                                <input class="user-pw" id="user-pw" type="password" />
+                                <input class="user-pw" id="user-pw" type="password" placeholder="****************" />
                             </div>
-                            <a class="login-forget" href="#">계정을 분실하셨나요?</a>
-                            <input class="login-button" type="submit" value="로그인" />
+                            <a class="login-forget" href="#" onclick="alert('로그인 버튼을 누르시면 다음 페이지로 넘어갑니다.')">계정을 분실하셨나요?</a>
+                            <input class="login-button" type="button" value="로그인" onclick="location.replace('splash.html');" />
                         </fieldset>
                     </form>
-                    <p class="login-signup-qstn">계정이 없으신가요? <a class="login-signup" href="#">회원가입</a></p>
+                    <p class="login-signup-qstn">계정이 없으신가요? <a class="login-signup" href="#" onclick="alert('로그인 버튼을 누르시면 다음 페이지로 넘어갑니다.')">회원가입</a></p>
                 </div>
                 <!-- //하단 영역 -->
             </div>

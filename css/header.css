@@ -2,6 +2,7 @@
 
 header {
     color: #fff;
+    background: #6E87C2;
     height: 88px;
     padding: 0 16px;
     /* border: 1px solid red; */
@@ -21,8 +22,10 @@ header {
 .header-row2 {
     /* border: 1px solid red; */
     display: flex;
+    align-items: center;
     height: 44px;
-    padding-top: 15px;
+    /* padding-top: 15px; */
+    padding-top: 0px;
 }
 
 .header-col-21 {flex: 1;}

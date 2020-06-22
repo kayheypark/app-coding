@@ -18,6 +18,7 @@ body {
     width: 375px;
     height: 812px;
     margin: 0 auto;
+    background: #EEEEEE;
 }
 
 a, a:hover, a:focus, a:visited {color: #333; text-decoration: none;}

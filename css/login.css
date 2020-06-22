@@ -1,7 +1,9 @@
 /* login.css */
 
-#wrap {background: #6E87C2;}
-.top-area {background: #6E87C2;}
+.top-area {
+    height: 269px;
+    background: #6E87C2;
+}
 .bottom-area {
     height: 455px;
     background: #fff url('../img/login-bg.png') no-repeat 16px 20px;

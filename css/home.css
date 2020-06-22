@@ -1,0 +1,53 @@
+/* home.css */
+
+.home-month {
+    font-size: 32px;
+    font-weight: 400;
+}
+.home-month-text {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.home-year {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-left: 8px;
+}
+
+.home-calendar-btn {width: 23px;}
+
+#home-page {}
+
+.home-calendar-week-div {
+    color: #fff;
+    background: #6E87C2;
+}
+
+.home-calendar-week {
+    display: block;
+    width: 375px;
+    padding: 0 16px;
+
+}
+
+.home-calendar-week th {
+    width: 30px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+
+.home-calendar-week th:last-child {
+    padding-right: 0;
+}
+
+.home-calendar-week td {
+    width: 30px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+.home-calendar-week td:last-child {
+    padding-right: 0;
+}
