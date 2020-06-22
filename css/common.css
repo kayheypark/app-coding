@@ -6,7 +6,16 @@
 @font-face {font-family: "SFUIText-Regular"; src: url('../font/SFUIText-Regular.ttf');}
 @font-face {font-family: "SFUIText-Semibold"; src: url('../font/SFUIText-Semibold.ttf');}
 
-body {font-family: "SFUIText-Medium"; color: #333; font-size: 12px;}
+body {
+
+    font-family: "SFUIText-Medium";
+    font-size: 12px;
+    color: #333;
+}
+
+#container {
+}
+
 a, a:hover, a:focus, a:visited {color: #333; text-decoration: none;}
 
 div {box-sizing: border-box;}
