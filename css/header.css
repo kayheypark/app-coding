@@ -1,0 +1,31 @@
+/* header.css */
+
+header {
+    color: #fff;
+    height: 110px;
+    padding: 0 16px;
+    /* border: 1px solid red; */
+}
+
+.header-row1 {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    height: 44px;
+}
+
+.header-col-11 {flex: 1;}
+.header-col-12 {flex: 1;}
+.header-col-13 {flex: 1; text-align: right;}
+
+.header-row2 {
+    /* border: 1px solid red; */
+    display: flex;
+    height: 44px;
+    padding-top: 29px;
+}
+
+.header-col-21 {flex: 1;}
+.header-col-22 {flex: 1;}
+.header-col-23 {flex: 1; text-align: right;}
+

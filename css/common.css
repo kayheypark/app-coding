@@ -1,0 +1,12 @@
+/* common.css */
+@font-face {font-family: "SFUIText-Bold"; src: url('../font/SFUIText-Bold.ttf');}
+@font-face {font-family: "SFUIText-Heavy"; src: url('../font/SFUIText-Heavy.ttf');}
+@font-face {font-family: "SFUIText-Light"; src: url('../font/SFUIText-Light.ttf');}
+@font-face {font-family: "SFUIText-Medium"; src: url('../font/SFUIText-Medium.ttf');}
+@font-face {font-family: "SFUIText-Regular"; src: url('../font/SFUIText-Regular.ttf');}
+@font-face {font-family: "SFUIText-Semibold"; src: url('../font/SFUIText-Semibold.ttf');}
+
+body {font-family: "SFUIText-Medium"; color: #333;}
+a, a:hover, a:focus, a:visited {color: #333; text-decoration: none;}
+
+div {box-sizing: border-box;}
