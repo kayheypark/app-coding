@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
     <script src="https://kit.fontawesome.com/5395c296b4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </head>
 <body>
     <!-- 전체레이아웃 -->
@@ -15,10 +16,10 @@
         <header>
             <div class="header-row1">
                 <div class="header-col-11">
-                    <span class="header-time">
-                        <span class="hr">9</span>
+                    <span class="header-time" id="header-time">
+                        <span class="hr" id="header-time-hr">00</span>
                         :
-                        <span class="min">41</span>
+                        <span class="min" id="header-time-min">00</span>
                     </span>
                 </div>
                 <div class="header-col-12"></div>
@@ -68,7 +69,7 @@
                             <input class="login-button" type="submit" value="로그인" />
                         </fieldset>
                     </form>
-                    <p>계정이 없으신가요? <a href="#">회원가입</a></p>
+                    <p class="login-signup-qstn">계정이 없으신가요? <a class="login-signup" href="#">회원가입</a></p>
                 </div>
                 <!-- //하단 영역 -->
             </div>
