@@ -11,9 +11,13 @@ body {
     font-family: "SFUIText-Medium";
     font-size: 12px;
     color: #333;
+    background: #999;
 }
 
-#container {
+#wrap {
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
 }
 
 a, a:hover, a:focus, a:visited {color: #333; text-decoration: none;}

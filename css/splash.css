@@ -15,7 +15,10 @@
 .splash-slogan {
     color: #fff;
     font-size: 24px;
-    text-align: center;    
+    text-align: center;
+    
+    opacity: 0;
+    animation: appear .4s ease-in-out forwards .8s;
 }
 
 .splash-slogan strong {
@@ -25,9 +28,17 @@
 .splash-logo {
     margin-top: 31px;
     text-align: center;
+
+    opacity: 0;
+    animation: appear .4s ease-in-out forwards .4s;
 }
 
 .splash-logo img {
     width: 196.86px;
 
+}
+
+@keyframes appear {
+    0% {opacity: 0; transform: translate3d(0,10px,0);}
+    100% {opacity: 1; transform: translate3d(0,0,0);}
 }
