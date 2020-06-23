@@ -4,6 +4,7 @@
     width: 100%;
     height: 724px;
     background: #6E87C2;
+    transform: translateY(-101px);
 }
 
 .splash-div {

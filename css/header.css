@@ -1,11 +1,23 @@
 /* header.css */
 
+
+
 header {
+    position: fixed;
+    width: 100%;
     color: #fff;
     background: #6E87C2;
     height: 88px;
-    padding: 0 16px;
     /* border: 1px solid red; */
+}
+
+.header-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    height: 88px;
+    background: #6E87C2;
 }
 
 .header-row1 {

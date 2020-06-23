@@ -1,5 +1,21 @@
 /* home.css */
 
+.home-new-btn a {
+    position: fixed;
+    right: 22px;
+    bottom: 93px;
+
+    display: block;
+    width: 52px;
+    height: 52px;
+
+    background: #FF9400 url('../img/home-new-btn.png') no-repeat -1px 3px;
+    border-radius: 36px;
+
+    box-shadow: 0 8px 3px rgba(0, 0, 0, 0.16);
+}
+
+
 .home-month {
     font-size: 32px;
     font-weight: 400;
@@ -15,39 +31,184 @@
     margin-left: 8px;
 }
 
-.home-calendar-btn {width: 23px;}
+.home-calendar-btn {
+    width: 23px;
+    cursor: pointer;
+}
 
 #home-page {}
 
 .home-calendar-week-div {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 88px;
+    border-radius: 0 0 26px 26px;
     color: #fff;
     background: #6E87C2;
 }
 
 .home-calendar-week {
+    display: flex;
+    width: 100%;
+    flex-flow : row wrap;
+    padding-top: 16px;
+
+}
+
+.home-calendar-week thead {width: 100%;}
+.home-calendar-week tbody {width: 100%;}
+
+.home-calendar-day {
+    display: flex;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.home-calendar-day th {
+    text-align: center;
+    flex: 1;
+}
+
+
+.home-calendar-day th:last-child {
+}
+
+.home-calendar-date {
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 0 9px 0;
+}
+
+.home-calendar-date td {
+    flex: 1;
+    text-align: center;
+}
+
+.home-calendar-date td:last-child {
+}
+
+.home-date-today {
+    
+    z-index: 1;
+    color: #6E87C2;
+    font-weight: bold;
+}
+
+.po-r {position: relative;}
+
+.home-date-today .po-r:after {
+    position: absolute;
+    z-index: -1;
+
+    top: -1px;
+    left: -1px;
+
+    content: '';
     display: block;
-    width: 375px;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    background: #fff;
+}
+
+.home-calendar-task {
+    display: flex;
+    width: 100%;
+    align-items: unset;
+}
+
+.home-calendar-task td {
+    width: 100%;
+    flex: 1;
+    text-align: center;
+}
+
+.home-calendar-task .task {
+    display: inline-block;
+    
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #EDAB4F;
+    margin: 2px;
+}
+
+.home-task-area > li:first-child {color: rgba(51, 51, 51, 0.5);}
+
+.home-task-area {
+    display: flex;
+    /* border: 1px solid red; */
     padding: 0 16px;
-
+    margin: 34px 0;
 }
 
-.home-calendar-week th {
-    width: 30px;
-    padding-right: 40px;
-    text-align: center;
+.home-task-area > li:first-child {
+    flex:1;
+}
+.home-task-area > li:last-child {
+    flex:5;
 }
 
 
-.home-calendar-week th:last-child {
-    padding-right: 0;
+
+.home-task-card {
+    display: flex;
+    width: 100%;
+
+    color: #717181;
+    font-family: "SFUIText-Light";
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-top-left-radius: 25px;
+    margin-bottom: 15px;
+    padding: 17px;
+    box-sizing: border-box;
 }
 
-.home-calendar-week td {
-    width: 30px;
-    padding-right: 40px;
-    text-align: center;
+.home-task-card i {margin-right: 6px;}
+.home-task-card .fas.fa-phone-alt {color: #76C26E;}
+.home-task-card .fas.fa-paperclip {color: #FF9400;}
+
+.home-task-card ul {
+    width: 100%;
+}
+.home-task-card ul li {
+    width: 100%;
 }
 
-.home-calendar-week td:last-child {
-    padding-right: 0;
+.home-task-card:last-child {
+    margin-bottom: 0;
+}
+
+.home-task-card-up {
+    display: flex;
+    width: 100%;
+}
+.home-task-card-up li {
+    display: inline;
+}
+
+.home-task-card-down {
+    display: flex;
+}
+.home-task-card-down li {
+    display: inline;
+}
+
+.home-task-title {
+    font-weight: bold;
+    margin-bottom: 27px;
+}
+.home-task-time {
+    text-align: right;
+    margin-bottom: 27px;
+}
+.home-task-gadget {
+    text-align: right;
+}
+
+.home-task-goal {
+
 }

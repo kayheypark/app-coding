@@ -1,12 +1,11 @@
-/* style.css */
-
 @charset 'utf-8';
+/* style.css */
 
 @import url('./reset.css');
 @import url('./global.css');
 @import url('./common.css');
 @import url('./header.css');
+@import url('./navigation.css');
 @import url('./splash.css');
 @import url('./login.css');
 @import url('./home.css');
-
