@@ -1,0 +1,126 @@
+/* navigation.css */
+
+.nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+    width: 100%;
+    height: 83px;
+
+    box-sizing: border-box;
+
+    background: #fff;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.nav-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-wrap > li {
+    flex:1;
+    height: 100%;
+    
+}
+
+.nav-wrap > li >a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+
+    line-height: 95px;
+
+    text-align: center;
+}
+
+.nav-my {
+    position: relative;
+    
+}
+
+.nav-my:after {
+    display: block;
+    background : url(../img/nav-my.png) no-repeat;
+    top:11px;
+    left:50%;
+    position:absolute;
+    background-size:100%;
+    opacity:0.5!important;
+    content:"";
+    width:22px;
+    height:22px;
+
+    transform: translateX(-50%);
+
+}
+
+.nav-alarm {
+    position: relative;
+    
+}
+
+.nav-alarm:after {
+    display: block;
+    background : url(../img/nav-alarm.png) no-repeat;
+    top:11px;
+    left:50%;
+    position:absolute;
+    background-size:100%;
+    opacity:0.5!important;
+    content:"";
+    width:26px;
+    height:26px;
+
+    transform: translateX(-50%);
+
+}
+.nav-map {
+    position: relative;
+    
+}
+
+.nav-map:after {
+    display: block;
+    background : url(../img/nav-map.png) no-repeat;
+    top:11px;
+    left:50%;
+    position:absolute;
+    background-size:100%;
+    opacity:0.5!important;
+    content:"";
+    width:24px;
+    height:24px;
+
+    transform: translateX(-50%);
+
+}
+.nav-friends {
+    position: relative;
+    
+}
+
+.nav-friends:after {
+    display: block;
+    background : url(../img/nav-friends.png) no-repeat;
+    top:11px;
+    left:50%;
+    position:absolute;
+    background-size:100%;
+    opacity:0.5!important;
+    content:"";
+    width:30px;
+    height:30px;
+
+    transform: translateX(-50%);
+
+}
+
+
+.nav-home {
+    background: url('../img/nav-home-on.png') no-repeat 50% 8px;
+
+}
