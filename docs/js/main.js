@@ -1,5 +1,11 @@
 window.onload = function() {
-   
+
+    
+   	//전역변수 (밖으로 뺀다.)
+	var today=new Date();
+	var nowYear=today.getFullYear(); //2012
+	var nowMonth=today.getMonth(); //4
+	var nowDate=today.getDate();
    
     refreshSTB();
     //시간정보 불러옴
@@ -45,15 +51,15 @@ window.onload = function() {
         var areaMth = document.getElementById('header-home-time-month');
 
         //달력 영역
-        var areaDay1 = $('#home-calendar-day th').eq(1);
-        var areaDay2 = $('#home-calendar-day th').eq(2);
-        var areaDay3 = $('#home-calendar-day th').eq(3);
-        var areaDay4 = $('#home-calendar-day th').eq(4);
-        var areaDay5 = $('#home-calendar-day th').eq(5);
-        var areaDay6 = $('#home-calendar-day th').eq(6);
-        var areaDay7 = $('#home-calendar-day th').eq(7);
+        var areaDay1 = $('#home-calendar-day th').eq(0);
+        var areaDay2 = $('#home-calendar-day th').eq(1);
+        var areaDay3 = $('#home-calendar-day th').eq(2);
+        var areaDay4 = $('#home-calendar-day th').eq(3);
+        var areaDay5 = $('#home-calendar-day th').eq(4);
+        var areaDay6 = $('#home-calendar-day th').eq(5);
+        var areaDay7 = $('#home-calendar-day th').eq(6);
 
-        var areaDate1 = $('#home-calendar-date td span').eq(0);
+        var areaDate1 = $('#home-calendar-date td span:first-child');
         var areaDate2 = $('#home-calendar-date td').eq(1);
         var areaDate3 = $('#home-calendar-date td').eq(2);
         var areaDate4 = $('#home-calendar-date td').eq(3);
@@ -76,13 +82,56 @@ window.onload = function() {
         $(areaDate5).html(sysDate+4);
         $(areaDate6).html(sysDate+5);
         $(areaDate7).html(sysDate+6);
-        
-        
+
+        console.log(sysDate);
+
         $(areaYr).html(sysYr);
         $(areaMth).html(sysMth);
+       
         
- }// 펑션 리프레시 타임
+ }
  refreshTime();
+ // 여기까지 펑션 리프레시 타임
+
+ function prevMonth(){ // 월 감소하는 함수
+    nowMonth--;
+
+    if(nowMonth<=-1){
+    nowMonth=11;
+    nowYear=nowYear-1;
+    }
+
+    calendarFunc();
+}
+
+
+function nextMonth(){ // 월 증가하는 함수
+    nowMonth++;
+
+    if(nowMonth>=12){
+    nowMonth=0;
+    nowYear=nowYear+1;
+    }
+
+    calendarFunc();
+}
+
+//달력 넘기기 스와이프
+//다음달
+$(window).bind("swipeleft",function(){
+    if(flag==1){
+        nextMonth();
+    }
+});
+
+//지난달
+$(window).bind("swiperight",function(){
+    if(flag==1){
+        prevMonth();
+    }
+});
+
+
 
 
 
@@ -128,36 +177,106 @@ window.onload = function() {
         }
 
     }
+
+    //달력불러오는 함수
+    function calendarFunc (){
+        var firstDay=new Date(nowYear,nowMonth,1);
+        var blankNum=firstDay.getDay(); //일~토 (0~6)
+        //console.log(blankNum);
     
-    //달력 전환
-    var flag=0;
+        var totDay=[31,28,31,30,31,30,31,31,30,31,30,31];
+        if((nowYear%4==0 && nowYear%100 !=0)||nowYear%400==0) totDay[1]=29;
+        var total=totDay[nowMonth]; //이달의 전체일수
+        //console.log(total);
+    
+        var rowNum=Math.ceil((blankNum+total)/7) //필요한 행~~!!
+//여기
+        $("#header-home-time-month").html(nowMonth+1);
+        $("#header-home-time-year").html(nowYear);
+    
+        var theTag = "";
+        var num=1;
+            for(var i=1; i<=rowNum; i++){ //행  
+                    theTag+="<tr class='home-calendar-date' id='home-calendar-date'>";
+                        for(var col=1; col<=7; col++){//열
+                            if((i==1&&col<=blankNum) || num>total){
+                                theTag+="<td></td>";
+                            }else{
+                                        
+                                var $color='';
+                                var $class='';
+                                var $circle="";
+                                var $fntwght = ""
+    
+                                // if(col==1) theColor = " style='color:red;'";
+                                // if(col==7) theColor = " style='color:blue;'";
+    
+                                if(num==nowDate){
+                                    $color=" style='color:#6E87C2'";
+                                    $circle = "<span class='circle'></span>";
+                                    $class = " class='home-date-today'";
+                                    $fntwght = " style='font-weight:bold'"
+                                }
+    
+                                theTag += "<td"+$color+$class+"><span"+$fntwght+">"+num+"</span>"+$circle+"</td>"
+    
+                                num++;
+                            }
+                        }
+                    theTag+="</tr>";
+            }
+        var areaTable = document.getElementById('home-calendar-tbody');
+        areaTable.innerHTML = theTag;
+    }
+    
+    //달력 전환///////////////////////////////
+    var flag=0; //0닫은상태 1연상태
     $("#home-calendar-btn").click(function(){
         if(flag==0){ //주력 -> 달력 전환
-            //파란창
+
+            
+            //파란창 내려오게
             $(".home-calendar-week-div").removeClass("on");
             $(".home-calendar-week-div").addClass("on");
 
-            //컨테이너
+            //컨테이너 내려가게
             $("#container").removeClass("on");
             $("#container").addClass("on");
 
-            //버튼이미지
+            //버튼이미지 바꾸기
             $("#home-calendar-btn").attr("src", "./img/home-week-btn.png");
 
-            //요일 정렬
-            var allTh = [$("#home-calendar-day th")];
-            // var realTh = allTh.slice(1,6);
-            // console.log(allTh);
-            // console.log(realTh);
+            //태스크 안보이게
+            $("#home-calendar-task").css({"position":"absolute","top":"-9999px"});
 
-            var areaDay1 = $('#home-calendar-day th').eq(1);
-            var areaDay2 = $('#home-calendar-day th').eq(2);
-            var areaDay3 = $('#home-calendar-day th').eq(3);
-            var areaDay4 = $('#home-calendar-day th').eq(4);
-            var areaDay5 = $('#home-calendar-day th').eq(5);
-            var areaDay6 = $('#home-calendar-day th').eq(6);
-            var areaDay7 = $('#home-calendar-day th').eq(7);
+            //써클 안보이게
+            $(".po-r").css({"position":"absolute","top":"-9999px"});
 
+            //한주 안보이게
+            var areaDate1 = $('#home-calendar-date td span').eq(0);
+            var areaDate2 = $('#home-calendar-date td').eq(1);
+            var areaDate3 = $('#home-calendar-date td').eq(2);
+            var areaDate4 = $('#home-calendar-date td').eq(3);
+            var areaDate5 = $('#home-calendar-date td').eq(4);
+            var areaDate6 = $('#home-calendar-date td').eq(5);
+            var areaDate7 = $('#home-calendar-date td').eq(6);
+            $(areaDate1).html("");
+            $(areaDate2).html("");
+            $(areaDate3).html("");
+            $(areaDate4).html("");
+            $(areaDate5).html("");
+            $(areaDate6).html("");
+            $(areaDate7).html("");
+
+            //요일 월,화,수,목,금 으로 보이게
+            var areaDay1 = $('#home-calendar-day th').eq(0);
+            var areaDay2 = $('#home-calendar-day th').eq(1);
+            var areaDay3 = $('#home-calendar-day th').eq(2);
+            var areaDay4 = $('#home-calendar-day th').eq(3);
+            var areaDay5 = $('#home-calendar-day th').eq(4);
+            var areaDay6 = $('#home-calendar-day th').eq(5);
+            var areaDay7 = $('#home-calendar-day th').eq(6);
+            console.log(areaDay1);
             $(areaDay1).html("일");
             $(areaDay2).html("월");
             $(areaDay3).html("화");
@@ -165,7 +284,12 @@ window.onload = function() {
             $(areaDay5).html("목");
             $(areaDay6).html("금");
             $(areaDay7).html("토");
-            
+
+                //달력 생성
+
+            calendarFunc ();
+
+
             
             flag=1;
         } else { // (복귀) 달력 -> 주력 전환 
@@ -179,10 +303,35 @@ window.onload = function() {
             
             //버튼이미지
             $("#home-calendar-btn").attr("src", "./img/home-calendar-btn.png");
+            //태스크 보이게
+             $("#home-calendar-task").css({"position":"relative","top":"0px"});
+            //써클 보이게
+            $(".po-r").css({"position":"relative","top":"0px"});
             
-            //요일 정렬
+            //달력 사라지게
+            $("#home-calendar-date:nth-child(2)").html("");
+            $("#home-calendar-date:nth-child(3)").html("");
+            $("#home-calendar-date:nth-child(4)").html("");
+            $("#home-calendar-date:nth-child(5)").html("");
 
+
+            //한주 보이게
             refreshTime();
+
+            //오늘 날짜 추가
+            $("#home-calendar-date td:first-child").html("<span>"+nowDate+"</span>");
+            $("#home-calendar-date td:first-child").css({"color":"#6E87C2", "z-index":"1", "font-weight":"bold"});
+            $("#home-calendar-date td:first-child").addClass("home-date-today");
+
+            var $circle = $("<span class='circle'></span>");
+
+            $("#home-calendar-date td:first-child span").after($circle);
+            // $("#home-calendar-date td:first-child").css({
+            //     "background":"#fff",
+            //     "border-radius":"22px",
+            //     "color":"#6E87C2"
+            // });
+
             flag=0;
         }
 
@@ -200,3 +349,4 @@ setInterval(function(){
 
     
 }// 온로드 닫기
+window.addEventListener("load",calendarFunc,false);

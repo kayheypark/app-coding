@@ -8,6 +8,7 @@
     <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
     <script src="https://kit.fontawesome.com/5395c296b4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
 </head>
 <body>
     <!-- 전체레이아웃 -->
@@ -55,29 +56,26 @@
                     <table class="home-calendar-week" id="home-calendar-week">
                         <thead>
                             <tr class="home-calendar-day" id="home-calendar-day">
-                                <th scope="row" class="blind">요일</th>
-                                <th scope="col">월</th>
-                                <th scope="col">월</th>
-                                <th scope="col">월</th>
-                                <th scope="col">월</th>
-                                <th scope="col">월</th>
-                                <th scope="col">월</th>
-                                <th scope="col">월</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="home-calendar-tbody">
                             <tr class="home-calendar-date" id="home-calendar-date">
-                                <th scope="row" class="blind">날짜</th>
-                                <td class="home-date-today"><span class="po-r">0</span></td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td class="home-date-today"><span>0</span><span class="circle"></span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
-                            <tr class="home-calendar-task" id="home-calendar-task">
-                                <th scope="row" class="blind">일정 여부</th>
+                            <!-- <tr class="home-calendar-task" id="home-calendar-task">
                                 <td></td>
                                 <td><strong class="task"></strong></td>
                                 <td></td>
@@ -85,7 +83,7 @@
                                 <td></td>
                                 <td><strong class="task"></strong></td>
                                 <td></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -110,7 +108,7 @@
                                             <li>
                                                 <ul class="home-task-card-down">
                                                     <li class="home-task-goal"><i class="fas fa-map-marker-alt"></i>학원</li>
-                                                    <li class="home-task-gadget">가젯</li>
+                                                    <li class="home-task-gadget"><span class="home-task-gadget-img"></span></li>
                                                 </ul>
                                             </li>
                                         </ul>
