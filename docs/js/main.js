@@ -1,19 +1,43 @@
 window.onload = function() {
-    
+   
+   
+    refreshSTB();
     //시간정보 불러옴
-    setInterval(function (){
+
+    function refreshSTB(){
+        var d = new Date();
+        var sysHr = addZero(d.getHours(),2);
+        var sysMin = addZero(d.getMinutes(),2);
+
+        //상태바 시계영역
+        var areaHr = document.getElementById('header-time-hr');
+        var areaMin = document.getElementById('header-time-min');
+
+            areaHr.innerHTML = sysHr;
+            areaMin.innerHTML = sysMin;
+    };
+            setInterval(function (){
+                var d = new Date();
+                var sysHr = addZero(d.getHours(),2);
+                var sysMin = addZero(d.getMinutes(),2);
+        
+                //상태바 시계영역
+                var areaHr = document.getElementById('header-time-hr');
+                var areaMin = document.getElementById('header-time-min');
+        
+                    areaHr.innerHTML = sysHr;
+                    areaMin.innerHTML = sysMin;
+        
+            },1000)
+ 
+
+    //시간:분 외 시간정보 불러옴
+    function refreshTime (){
         var d = new Date();
         var sysYr = d.getFullYear();
         var sysMth = d.getMonth()+1;
         var sysDay = dayToString(d.getDay());
         var sysDate = d.getDate();
-        var sysHr = addZero(d.getHours(),2);
-        var sysMin = addZero(d.getMinutes(),2);
-        
-
-        //상태바 시계영역
-        var areaHr = document.getElementById('header-time-hr');
-        var areaMin = document.getElementById('header-time-min');
 
         //홈, 일정 페이지
         //월, 연도 영역
@@ -57,14 +81,10 @@ window.onload = function() {
         $(areaYr).html(sysYr);
         $(areaMth).html(sysMth);
         
-        var statusTime = function (){
-            areaHr.innerHTML = sysHr;
-            areaMin.innerHTML = sysMin;
-        }
-        statusTime();
+ }// 펑션 리프레시 타임
+ refreshTime();
 
 
-    },1000)
 
     function addZero (num, digit) {
         var zero = '';
@@ -109,7 +129,73 @@ window.onload = function() {
 
     }
     
-    
+    //달력 전환
+    var flag=0;
+    $("#home-calendar-btn").click(function(){
+        if(flag==0){ //주력 -> 달력 전환
+            //파란창
+            $(".home-calendar-week-div").removeClass("on");
+            $(".home-calendar-week-div").addClass("on");
+
+            //컨테이너
+            $("#container").removeClass("on");
+            $("#container").addClass("on");
+
+            //버튼이미지
+            $("#home-calendar-btn").attr("src", "./img/home-week-btn.png");
+
+            //요일 정렬
+            var allTh = [$("#home-calendar-day th")];
+            // var realTh = allTh.slice(1,6);
+            // console.log(allTh);
+            // console.log(realTh);
+
+            var areaDay1 = $('#home-calendar-day th').eq(1);
+            var areaDay2 = $('#home-calendar-day th').eq(2);
+            var areaDay3 = $('#home-calendar-day th').eq(3);
+            var areaDay4 = $('#home-calendar-day th').eq(4);
+            var areaDay5 = $('#home-calendar-day th').eq(5);
+            var areaDay6 = $('#home-calendar-day th').eq(6);
+            var areaDay7 = $('#home-calendar-day th').eq(7);
+
+            $(areaDay1).html("일");
+            $(areaDay2).html("월");
+            $(areaDay3).html("화");
+            $(areaDay4).html("수");
+            $(areaDay5).html("목");
+            $(areaDay6).html("금");
+            $(areaDay7).html("토");
+            
+            
+            flag=1;
+        } else { // (복귀) 달력 -> 주력 전환 
+            //파란창
+            $(".home-calendar-week-div").addClass("on");
+            $(".home-calendar-week-div").removeClass("on");
+            
+            //컨테이너
+            $("#container").addClass("on");
+            $("#container").removeClass("on");
+            
+            //버튼이미지
+            $("#home-calendar-btn").attr("src", "./img/home-calendar-btn.png");
+            
+            //요일 정렬
+
+            refreshTime();
+            flag=0;
+        }
+
+        return flag;
+    })
+
+setInterval(function(){
+    console.log(flag);
+
+},1000);
+
+
+
 
 
     

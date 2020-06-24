@@ -24,7 +24,12 @@ body {
     width: 100%;
     background: #EEEEEE;
     padding: 189px 0 230px 0;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
+
+    transition: padding .2s linear 0s;
+}
+#container.on {
+    padding: 389px 0 230px 0;
 }
 
 ::-webkit-scrollbar {

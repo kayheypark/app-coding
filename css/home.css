@@ -46,6 +46,12 @@
     border-radius: 0 0 26px 26px;
     color: #fff;
     background: #6E87C2;
+
+    transition: height .2s linear 0s;
+}
+
+.home-calendar-week-div.on {
+    height: 300px;
 }
 
 .home-calendar-week {
