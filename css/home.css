@@ -129,7 +129,9 @@
     z-index: -1;
 
     top: -1px;
-    left: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
 
     content: '';
     display: block;

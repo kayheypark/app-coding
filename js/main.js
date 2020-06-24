@@ -246,9 +246,6 @@ $(window).bind("swiperight",function(){
             //버튼이미지 바꾸기
             $("#home-calendar-btn").attr("src", "./img/home-week-btn.png");
 
-            //태스크 안보이게
-            $("#home-calendar-task").css({"position":"absolute","top":"-9999px"});
-
             //써클 안보이게
             $(".po-r").css({"position":"absolute","top":"-9999px"});
 
@@ -303,8 +300,6 @@ $(window).bind("swiperight",function(){
             
             //버튼이미지
             $("#home-calendar-btn").attr("src", "./img/home-calendar-btn.png");
-            //태스크 보이게
-             $("#home-calendar-task").css({"position":"relative","top":"0px"});
             //써클 보이게
             $(".po-r").css({"position":"relative","top":"0px"});
             
@@ -324,13 +319,7 @@ $(window).bind("swiperight",function(){
             $("#home-calendar-date td:first-child").addClass("home-date-today");
 
             var $circle = $("<span class='circle'></span>");
-
             $("#home-calendar-date td:first-child span").after($circle);
-            // $("#home-calendar-date td:first-child").css({
-            //     "background":"#fff",
-            //     "border-radius":"22px",
-            //     "color":"#6E87C2"
-            // });
 
             flag=0;
         }
@@ -342,6 +331,10 @@ setInterval(function(){
     console.log(flag);
 
 },1000);
+
+$("#logout").click(function () {
+    confirm("정말로 로그아웃 하시겠습니까?","로그아웃");
+});
 
 //네비게이션
 //1.나의
