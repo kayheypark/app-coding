@@ -343,6 +343,18 @@ setInterval(function(){
 
 },1000);
 
+//네비게이션
+//1.나의
+$(".nav-my").click(function(){
+    $("#drawer-wrap").addClass("on");
+    $("#wrap").addClass("on");
+    $("body").addClass("on");
+});
+$(".drawer-close-btn").click(function(){
+    $("#drawer-wrap").removeClass("on");
+    $("#wrap").removeClass("on");
+    $("body").addClass("on");
+});
 
 
 
