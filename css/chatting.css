@@ -1,6 +1,6 @@
 /* chatting.css */
 
-#chat-page {}
+#chat-page {padding-top: 125px;}
 
 .header-chat-wrap {
     height: 110px;
@@ -30,4 +30,19 @@
 .chat-tit-txt {
     font-family: "SFUIText-Light";
     font-size: 20px;
+}
+
+
+.chat-panel {
+    display: block;
+    border: 1px solid red;
+}
+
+.chat-panel > li {
+    border: 1px solid red;
+    padding: 14px;
+}
+
+.chat-time-line {
+    
 }
