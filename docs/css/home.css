@@ -1,11 +1,11 @@
 /* home.css */
 
 #home-page {
-    padding: 189px 0 230px 0;
+    padding: 189px 0 0px 0;
     transition: all .2s linear 0s;
 }
 #home-page.on {
-    padding: 389px 0 130px 0;
+    padding: 389px 0 0px 0;
 }
 
 
