@@ -1,16 +1,16 @@
 /* splash.css */
 
+
 #splash-page {
     width: 100%;
-    height: 723px;
+    height: 812px;
     background: #6E87C2;
-    transform: translateY(-101px);
 }
 
 .splash-div {
     display: flex;
     flex-direction: column;
-    padding-top: 219px;
+    padding-top: 307px;
 }
 
 .splash-slogan {

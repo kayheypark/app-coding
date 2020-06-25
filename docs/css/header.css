@@ -4,6 +4,7 @@
 
 header {
     position: fixed;
+    top: 0;
     width: 100%;
     color: #fff;
     background: #6E87C2;
@@ -27,8 +28,8 @@ header {
     height: 44px;
 }
 
-.header-col-11 {flex: 1;}
-.header-col-12 {flex: 1;}
+.header-col-11 {flex: 1; text-align: left;}
+.header-col-12 {flex: 1; text-align: center;}
 .header-col-13 {flex: 1; text-align: right;}
 
 .header-row2 {
@@ -40,7 +41,7 @@ header {
     padding-top: 0px;
 }
 
-.header-col-21 {flex: 1;}
-.header-col-22 {flex: 1;}
+.header-col-21 {flex: 1; text-align: left;}
+.header-col-22 {flex: 1; text-align: center;}
 .header-col-23 {flex: 1; text-align: right;}
 
