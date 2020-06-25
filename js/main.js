@@ -240,8 +240,8 @@ $(window).bind("swiperight",function(){
             $(".home-calendar-week-div").addClass("on");
 
             //컨테이너 내려가게
-            $("#container").removeClass("on");
-            $("#container").addClass("on");
+            $("#home-page").removeClass("on");
+            $("#home-page").addClass("on");
 
             //버튼이미지 바꾸기
             $("#home-calendar-btn").attr("src", "./img/home-week-btn.png");
@@ -295,8 +295,8 @@ $(window).bind("swiperight",function(){
             $(".home-calendar-week-div").removeClass("on");
             
             //컨테이너
-            $("#container").addClass("on");
-            $("#container").removeClass("on");
+            $("#home-page").addClass("on");
+            $("#home-page").removeClass("on");
             
             //버튼이미지
             $("#home-calendar-btn").attr("src", "./img/home-calendar-btn.png");

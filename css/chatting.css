@@ -1,0 +1,33 @@
+/* chatting.css */
+
+#chat-page {}
+
+.header-chat-wrap {
+    height: 110px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+
+}
+
+.chat-cancel {
+    display: block;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-family: "SFUIText-Light";
+    font-size: 20px;
+    
+}
+
+.chat-tit-img {
+    display: inline-block;
+    width: 22px;
+    height: 16px;
+    margin-right: 3px;
+    
+    background: url('../img/chat-tit-img.png') no-repeat 0 0;
+    
+}
+
+.chat-tit-txt {
+    font-family: "SFUIText-Light";
+    font-size: 20px;
+}
